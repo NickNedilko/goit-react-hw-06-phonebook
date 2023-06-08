@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-// import { removeContact } from 'redux/contacts/contacts.actions';
+import { RiDeleteBin6Line } from 'react-icons/ri';
+
 
 import { getContactsList, removeContact } from 'redux/contacts/contacts.slice';
 import css from './Contacts.module.css';
@@ -16,7 +17,6 @@ const Contacts = () => {
   };
 
   const filterContact = () => {
-    // const normalizedFilter = value.toLowerCase();
     return contacts.filter(contact =>
       contact.name.toLowerCase().includes(value.toLowerCase())
     );
@@ -35,7 +35,7 @@ const Contacts = () => {
               type="button"
               onClick={() => deleteContact(contactId)}
             >
-              Delete
+             Delete <RiDeleteBin6Line />
             </button>
           </li>
         );
